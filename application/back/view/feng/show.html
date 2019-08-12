@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<a href="{:url('add')}">添加</a>
+	<table>
+		<th>姓名</th>
+		<th>性别</th>
+		<th>手机号</th>
+		<th>操作</th>
+		{foreach name="data" item="vo" }
+		<tr>
+			<td>{$vo.name}</td>
+			<td>{$vo.sex}</td>
+			<td>{$vo.phone}</td>
+			<td>
+				<a href="{:url('del','id='.$vo['id'])}">删除</a>
+				<a href="{:url('edit','id='.$vo['id'])}">修改</a>
+			</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>

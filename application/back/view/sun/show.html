@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<a href="{:url('add')}">添加分类</a><br>
+<a href="{:url('add1')}">添加分类权限</a>
+	<table border="1" cellpadding="10" cellspacing="0">
+		<th>id</th>
+		<th>分类名</th>
+		<th>操作</th>
+		{foreach $list as $v}
+		<tr>
+			<td>{$v.auth_id}</td>
+			<td>{$v.auth_name}</td>
+			<td>
+				<a href="{:url('del','auth_id='.$v['auth_id'])}">删除</a>
+			</td>
+		</tr>
+		{/foreach}
+		<tr>
+			{$page}
+		</tr>
+	</table>
+
+</body>
+</html>

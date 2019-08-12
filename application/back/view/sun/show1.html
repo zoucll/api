@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="1" cellspacing="0" cellpadding="10"> 
+		<th>id</th>
+		<th>权限规则</th>
+		<th>权限名称</th>
+		<th>权限分类</th>
+		<th>操作</th>
+		{foreach $list as $v}
+		<tr>
+			<td>{$v.quan_id}</td>
+			<td>{$v.quan_ze}</td>
+			<td>{$v.quan_name}</td>
+			<td>{$v.quan_fen}</td>
+			<td>
+				<a href="{:url('del','quan_id='.$v['quan_id'])}">删除</a>
+			</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>
